@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Oswald', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: #f0f0f3;
+}
+main{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square{
+    border-radius: 18px;
+    background: #f0f0f3;
+    box-shadow:  20px 20px 60px #cccccf,
+                -20px -20px 60px #ffffff;
+}
+.circle{
+    border-radius: 50%;
+    background: #f0f0f3;
+    box-shadow:  20px 20px 60px #cccccf,
+                -20px -20px 60px #ffffff;
+}
+
+.calculator{
+    height: 80vh;
+    width: clamp(15em, 20vw, 50em);
+}
+#screen{
+    background-color: #191818;
+    height: 40%;
+    border-radius: 18px 18px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 1em;
+}
+#calculate{
+    font-size:large;
+    color: #4a5873;
+}
+#result{
+    color: #f0f0f3;
+    font-size:xx-large;
+}
+#keyboard{
+    padding: 2em;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: .5em;
+    grid-row-gap: .5em;
+}
+button{
+    height: 2.5em;
+    width: 2.em;
+    border: none;
+    border-radius: 5px;
+    background: #f0f0f3;
+    box-shadow:  20px 20px 20px #cccccf,
+                -20px -20px 20px #ffffff;
+    cursor: pointer;
+    transition:  box-shadow 0.5s linear, color 0.5s linear;
+}
+button:hover{
+    color: #fff;
+    text-shadow: 2px 2px 20px #333;
+    box-shadow: none;
+}
+button:active{
+    scale: .95;
+    box-shadow:  5px 5px 20px #cccccf,
+    -5px -5px 20px #ffffff;
+}
+
+.number{
+    color: #7c92bc;
+}
+
+#clear { grid-area: 1 / 1 / 2 / 2; }
+#negative { grid-area: 1 / 2 / 2 / 3; }
+#percentage { grid-area: 1 / 3 / 2 / 4; }
+#division { grid-area: 1 / 4 / 2 / 5; }
+#seven { grid-area: 2 / 1 / 3 / 2; }
+#eight { grid-area: 2 / 2 / 3 / 3; }
+#nine { grid-area: 2 / 3 / 3 / 4; }
+#multiplication { grid-area: 2 / 4 / 3 / 5; }
+#four { grid-area: 3 / 1 / 4 / 2; }
+#five { grid-area: 3 / 2 / 4 / 3; }
+#six { grid-area: 3 / 3 / 4 / 4; }
+#subtract { grid-area: 3 / 4 / 4 / 5; }
+#one { grid-area: 4 / 1 / 5 / 2; }
+#two { grid-area: 4 / 2 / 5 / 3; }
+#three { grid-area: 4 / 3 / 5 / 4; }
+#plus { grid-area: 4 / 4 / 5 / 5; }
+#zero { grid-area: 5 / 1 / 6 / 3; }
+#decimal { grid-area: 5 / 3 / 6 / 4; }
+#equal { grid-area: 5 / 4 / 6 / 5; background: #2dd3c5; color: #f0f0f3 }
