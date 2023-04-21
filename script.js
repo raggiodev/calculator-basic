@@ -1,4 +1,5 @@
 // Agarramos elementos del DOM
+// Constantes
 const screen = document.querySelector("#screen");
 const calculate = document.querySelector("#calculate");
 const result = document.querySelector("#result");
@@ -13,6 +14,7 @@ const equalBtn = document.querySelector("#equal");
 const decimalBtn = document.querySelector("#decimal");
 const numbersBtn = document.querySelectorAll(".number");
 
+// Variables
 let firstValue = "";
 let secondValue = "";
 let currentOperation = null;
