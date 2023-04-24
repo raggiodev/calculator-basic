@@ -1,3 +1,4 @@
+// Agarramos los elementos del DOM
 const plus = document.getElementById('plus');
 const subtract = document.getElementById('subtract');
 const multiplication = document.getElementById('multiplication');
