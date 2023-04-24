@@ -9,14 +9,14 @@
 body{
     min-height: 100vh;
     background: #f0f0f3;
+    overflow: hidden;
 }
 main{
-    min-height: 100vh;
+    max-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .square{
     border-radius: 18px;
     background: #f0f0f3;
@@ -29,10 +29,33 @@ main{
     box-shadow:  20px 20px 60px #cccccf,
                 -20px -20px 60px #ffffff;
 }
-
 .calculator{
-    height: 80vh;
-    width: clamp(15em, 20vw, 50em);
+    height: 48em;
+    width: 25em;
+    position: relative;
+    top: 5em;
+}
+.calculator::before{
+    content: "";
+    position: absolute;
+    height: 20em;
+    width: 10.8em;
+    background-image: radial-gradient(circle,#dee0ea .3em,transparent .3em);
+    background-size: 1.5em 1.5em;
+    left: -5em;
+    top: -3em;
+    z-index: -1;
+}
+.calculator::after{
+    content: "";
+    position: absolute;
+    height: 20em;
+    width: 5.6em;
+    background-image: radial-gradient(circle,#dee0ea .3em,transparent .3em);
+    background-size: 1.5em 1.5em;
+    right: -5.3em;
+    bottom: 3em;
+    z-index: -1;
 }
 #screen{
     background-color: #191818;
@@ -43,14 +66,17 @@ main{
     justify-content: flex-end;
     align-items: flex-end;
     padding: 1em;
+    overflow: hidden;
+    border: #191818 1.5em solid;
 }
 #calculate{
-    font-size:large;
+    font-size:xx-large;
     color: #4a5873;
 }
 #result{
     color: #f0f0f3;
-    font-size:xx-large;
+    font-size:xxx-large;
+    min-height: 1.5em;
 }
 #keyboard{
     padding: 2em;
@@ -62,8 +88,10 @@ main{
     grid-row-gap: .5em;
 }
 button{
-    height: 2.5em;
-    width: 2.em;
+    height: 4.5em;
+    width: 4.5em;
+    font-size:1em;
+    padding: .1em;
     border: none;
     border-radius: 5px;
     background: #f0f0f3;
@@ -103,6 +131,57 @@ button:active{
 #two { grid-area: 4 / 2 / 5 / 3; }
 #three { grid-area: 4 / 3 / 5 / 4; }
 #plus { grid-area: 4 / 4 / 5 / 5; }
-#zero { grid-area: 5 / 1 / 6 / 3; }
+#zero { grid-area: 5 / 1 / 6 / 3; 
+width: 100%;}
 #decimal { grid-area: 5 / 3 / 6 / 4; }
-#equal { grid-area: 5 / 4 / 6 / 5; background: #2dd3c5; color: #f0f0f3 }
+#equal { grid-area: 5 / 4 / 6 / 5;
+        background: #2dd3c5;
+        color: #f0f0f3 }
+
+.bg{
+    position:fixed;
+    height: 25em;
+    width: 25em;
+    z-index: -1;
+}
+.bg:nth-child(2){
+    top: 15em;
+    left: 10vw;
+    height: 15em;
+    width: 15em;
+}
+.bg:nth-child(3){
+    top: 10em;
+    right: 10vw;
+    height: 20em;
+    width: 20em;
+}
+.bg:nth-child(4){
+    bottom: -8em;
+    left: 10vw;
+}
+.bg:nth-child(5){
+    bottom: 2em;
+    right: 10vw;
+    width: 15em;
+    height: 15em;
+}
+@media (max-width: 440px) {
+    .calculator{
+        scale:.8;
+        position: absolute;
+    }
+}
+@media (max-height: 768px) {
+    body{
+        overflow:auto;
+    }
+    main{
+        padding: 1em;
+        max-height:none;
+    }
+    .calculator{
+        top: 0;
+        scale:.8;
+    }
+}
