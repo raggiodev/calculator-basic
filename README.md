@@ -1,4 +1,4 @@
-# 100-Projects-FromJuniorToSenior-3-Calculator
+# Calculator - Basic
 
 #3 — Create a Calculator
 Creating a simple calculator is yet another great way to get exposure to JavaScript. Here we are starting to have more and more functionality, meaning it’s a great starter project for learning how you can structure your code to make it more easily maintainable, scalable, and readable.
